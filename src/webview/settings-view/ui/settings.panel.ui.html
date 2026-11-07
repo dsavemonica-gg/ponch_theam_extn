@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponch Settings</title>
+    <link rel="stylesheet" href="{{CSS_URI}}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Configuración de Ponch</h1>
+            <p class="subtitle">Personalización visual y efectos de entorno</p>
+        </header>
+
+        <nav class="tabs">
+            <button type="button" class="tab-btn active" data-tab="tab-editor">Editor</button>
+            <button type="button" class="tab-btn" data-tab="tab-bars">Barras y Terminal</button>
+            <button type="button" class="tab-btn" data-tab="tab-bg">Fondo</button>
+            <button type="button" class="tab-btn" data-tab="tab-global">Acentos y Color</button>
+        </nav>
+
+        <form id="settings-form">
+            <!-- PESTAÑA: EDITOR -->
+            <section id="tab-editor" class="tab-content active">
+                <div class="card">
+                    <h3 class="card-title">Cursor del Editor</h3>
+                    <div class="form-group">
+                        <label for="cursor-color">Color del puntero (cursor):</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="cursor-color" value="#00ffff">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Resaltado de Línea Activa</h3>
+                    <div class="form-group">
+                        <label for="line-box">Estilo de contenedor:</label>
+                        <select id="line-box">
+                            <option value="boxed-split">Doble marco (Número de línea separado)</option>
+                            <option value="boxed-full">Marco continuo unificado</option>
+                            <option value="standard">Sin marco adicional</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="line-anim">Transición al cambiar de línea:</label>
+                        <select id="line-anim">
+                            <option value="lateral">Desplazamiento horizontal suave</option>
+                            <option value="elevation">Micro-elevación</option>
+                            <option value="none">Desactivada</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PESTAÑA: BARRAS Y TERMINAL -->
+            <section id="tab-bars" class="tab-content">
+                <div class="card">
+                    <h3 class="card-title">Explorador de Archivos</h3>
+                    <div class="form-check">
+                        <input type="checkbox" id="sidebar-hover-anim">
+                        <label for="sidebar-hover-anim">Efecto suave al pasar el cursor sobre archivos</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="sidebar-click-anim">
+                        <label for="sidebar-click-anim">Micro-animación al seleccionar archivo</label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Consola y Terminal Integrada</h3>
+                    <div class="form-check">
+                        <input type="checkbox" id="console-slide">
+                        <label for="console-slide">Transición vertical al abrir o cerrar el panel</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="console-color">Color de texto principal en terminal:</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="console-color" value="#00ffff">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PESTAÑA: FONDO Y TRANSPARENCIA -->
+            <section id="tab-bg" class="tab-content">
+                <div class="card">
+                    <h3 class="card-title">Capa de Fondo Personalizada</h3>
+                    <div class="form-check">
+                        <input type="checkbox" id="bg-enabled">
+                        <label for="bg-enabled">Activar fondo personalizado en la ventana</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="bg-type">Tipo de medio:</label>
+                        <select id="bg-type">
+                            <option value="image">Imagen estática</option>
+                            <option value="video">Video continuo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bg-url">Origen del archivo (Ruta absoluta o URL remota):</label>
+                        <input type="text" id="bg-url" placeholder="https://... o C:/rutas/fondo.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="bg-opacity">Nivel de opacidad del fondo:</label>
+                        <div class="range-wrapper">
+                            <input type="range" id="bg-opacity" min="0.05" max="1" step="0.05">
+                            <span id="bg-opacity-display" class="range-display">30%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PESTAÑA: GLOBAL -->
+            <section id="tab-global" class="tab-content">
+                <div class="card">
+                    <h3 class="card-title">Acentos Visuales</h3>
+                    <div class="form-group">
+                        <label for="neon-color">Color de acento primario:</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="neon-color" value="#ff007f">
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="neon-glow">
+                        <label for="neon-glow">Habilitar resplandor sutil en bordes y focos activos</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ACCIONES DEL FORMULARIO -->
+            <footer class="actions">
+                <button type="button" id="reset-btn" class="btn-secondary">Restablecer valores</button>
+                <button type="submit" id="save-btn" class="btn-primary">Guardar y Aplicar</button>
+            </footer>
+        </form>
+    </div>
+
+    <script src="{{JS_URI}}"></script>
+</body>
+</html>

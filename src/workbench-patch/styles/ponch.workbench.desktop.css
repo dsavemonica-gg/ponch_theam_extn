@@ -1,0 +1,45 @@
+.monaco-editor .cursor {
+  background-color: var(--ponch-cursor-color) !important;
+  border-color: var(--ponch-cursor-color) !important;
+  box-shadow: 0 0 8px var(--ponch-cursor-color) !important;
+  transition: transform 0.08s ease, width 0.15s ease, height 0.15s ease !important;
+}
+
+/* Encasillado de la línea activa en el editor */
+.monaco-editor .current-line {
+  background-color: var(--ponch-active-line-color) !important;
+  border: 1px solid var(--ponch-neon-color) !important;
+  border-radius: 4px !important;
+  box-shadow: var(--ponch-neon-glow) !important;
+  transition: transform 0.15s ease-out, background-color 0.2s ease !important;
+}
+
+/* Encasillado del número de línea (gutter) */
+.monaco-editor .margin-view-overlays .current-line-margin {
+  background-color: var(--ponch-active-line-color) !important;
+  border: 1px solid var(--ponch-neon-color) !important;
+  border-right: none !important;
+  border-radius: 4px 0 0 4px !important;
+}
+
+.monaco-list-row {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s ease !important;
+}
+
+.monaco-list-row:hover {
+  transform: translateX(4px) !important;
+}
+
+/* Líneas de jerarquía del árbol de archivos */
+.monaco-tl-indent > .indent-guide {
+  border-left: 1px solid var(--ponch-sidebar-hierarchy-color) !important;
+  box-shadow: 0 0 4px var(--ponch-sidebar-hierarchy-color) !important;
+}
+
+.monaco-workbench .part.sidebar {
+  border-right: 1px solid var(--ponch-neon-color) !important;
+}
+
+.monaco-workbench .part.statusbar {
+  border-top: 1px solid var(--ponch-neon-color) !important;
+}

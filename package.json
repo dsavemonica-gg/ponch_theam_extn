@@ -1,0 +1,101 @@
+{
+  "name": "ponch",
+  "displayName": "Ponch",
+  "publisher": "davemonica",
+  "description": "Extensión de animmaciones para Visual Studio Code, que permite personalizar la apariencia de la interfaz de usuario con animaciones y efectos visuales.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Themes", "Other"],
+  "main": "./dist/extension.cjs",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ponch.enable",
+        "title": "Ponch: Activar"
+      },
+      {
+        "command": "ponch.disable",
+        "title": "Ponch: Desactivar"
+      },
+      {
+        "command": "ponch.openSettings",
+        "title": "Ponch: Abrir Panel de Configuración"
+      }
+    ],
+    "configuration": {
+      "title": "Ponch Animation",
+      "properties": {
+        "ponch.sidebar": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de la barra lateral izquierda"
+        },
+        "ponch.topBar": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de la barra superior"
+        },
+        "ponch.bottomBar": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de la barra inferior y notificaciones"
+        },
+        "ponch.console": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de la consola y terminal"
+        },
+        "ponch.editor": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración del editor central, cursores y líneas"
+        },
+        "ponch.transparency": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de transparencia de ventana"
+        },
+        "ponch.background": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración de imagen o video de fondo"
+        },
+        "ponch.global": {
+          "type": "object",
+          "default": {},
+          "description": "Configuración global de colores, bordes y neón"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node esbuild.js --production",
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "vsce package"
+  },
+  "keywords": [],
+  "author": "davemonica",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^ 20.19.43",
+    "@types/vscode": "^1.144.0",
+    "@vscode/vsce": "^4.1.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

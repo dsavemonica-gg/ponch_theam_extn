@@ -1,0 +1,1 @@
+console.log('Ponch Animation: Renderizador inyectado en Electron con éxito.');

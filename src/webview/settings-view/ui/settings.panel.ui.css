@@ -1,0 +1,225 @@
+:root {
+  /* Integración nativa con los temas de VS Code */
+  --bg-primary: var(--vscode-editor-background, #1e1e1e);
+  --bg-secondary: var(--vscode-sideBar-background, #252526);
+  --bg-input: var(--vscode-input-background, #3c3c3c);
+  --border-color: var(--vscode-panel-border, #2d2d2d);
+  --text-primary: var(--vscode-foreground, #cccccc);
+  --text-muted: var(--vscode-descriptionForeground, #858585);
+  --accent-color: var(--vscode-button-background, #0e639c);
+  --accent-hover: var(--vscode-button-hoverBackground, #1177bb);
+  --btn-text: var(--vscode-button-foreground, #ffffff);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--vscode-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-size: var(--vscode-font-size, 13px);
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Navegación por pestañas */
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--text-primary);
+  font-weight: 500;
+  border-bottom-color: var(--accent-color);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Tarjetas de sección */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  margin: 0 0 14px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Campos de formulario */
+.form-group {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.form-check:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+select, input[type="text"] {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+
+select:focus, input[type="text"]:focus {
+  border-color: var(--accent-color);
+}
+
+/* Rango y Selectores */
+.range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent-color);
+}
+
+.range-display {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+input[type="color"] {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 38px;
+  height: 28px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+/* Pie y Acciones */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}

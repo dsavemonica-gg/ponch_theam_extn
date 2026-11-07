@@ -1,0 +1,1 @@
+Extension para VS Code, este proyecto tiene el fin de mejorar la escencia de VS, mediante nuevas animaciones, estetica y diseño.
